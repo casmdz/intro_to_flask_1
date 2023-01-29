@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Site</title>
- 
+{% extends 'base.html' %}
+{% block content %}
+    <h1>HOME PAGE</h1>
 
-<body>
-<h1>HOMEPAGE</h1>
-    {{ my_text }} 
-    {# <!--Jinja {{}} says treat this as a variable  --> #}
-    <!-- expressions use the syntax curly brace percent sign-->
-    <ul>
-        {% for person in people %}
-            {% if person == 'brandt' %}
-            <li>
-                <strong>
-                    {{ person }}
-                </strong>
-            </li>
-            {% else %}
-                <li>
-                    {{ person }}
-                </li>
+        {{ my_text }} 
+        <!-- Using variable, use double curly braces -->
 
-            {% endif %}
-        {% endfor %}
 
-    </ul>
+        <ul>
+            {% for person in people %}
+                {% if person == 'Brandt' %}
+                    <li>
+                        <strong>
+                            {{ person }}
+                        </strong>
+                    </li>
 
-    <p>
-        {{ favorite_txt }}
-    </p>
-    <p>
-        Click <a href="favorite_5">here</a>
-        to check them out. 
-    </p>
-    <p>
-        Click <a href="contact">here</a>
-        for the contact page. 
-    </p>
-
-</body>
-</html>
+                {% else %}
+                    <li>
+                        {{ person }}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+{% endblock %}

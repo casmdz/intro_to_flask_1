@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Favorite Artists</title>      
+      </head>
+<body>
+
+
+    <h1>My top 5 Favorite Artists</h1>
+    <ul>
+        {% for favorites in favorites %}
+            {% if favorites == 'Tyler the Creator' %}
+                <li>
+                    <strong>
+                        {{ favorites }}
+                    </strong>
+                </li>
+            {% else %}
+                <li>
+                    {{ favorites }}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <p><a href="/"
+        >Take me back to the home page</a></p>
+
+
+</body>
+
+</html>

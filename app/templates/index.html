@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+ 
+
+<body>
+<h1>HOMEPAGE</h1>
+    {{ my_text }} 
+    {# <!--Jinja {{}} says treat this as a variable  --> #}
+    <!-- expressions use the syntax curly brace percent sign-->
+    <ul>
+        {% for person in people %}
+            {% if person == 'brandt' %}
+            <li>
+                <strong>
+                    {{ person }}
+                </strong>
+            </li>
+            {% else %}
+                <li>
+                    {{ person }}
+                </li>
+
+            {% endif %}
+        {% endfor %}
+
+    </ul>
+
+</body>
+</html>
